@@ -31,7 +31,7 @@
                 {{#if posts.length }}
                 {{#each posts as |post|}}
                 <div class="border border-light rounded w-100 p-2 mb-2">
-                    <a class="post1" href="/post/{{this.id}}"><h2 class="border border-light rounded w-100 p-2 my-2 text-light">{{post.post_title}} by {{this.user.username}}</h2></a>
+                    <a class="post1" href="/post/{{this.id}}"><h2 class="border border-light rounded w-100 p-2 my-2 text-light">{{post.post_title}} --- {{this.user.username}}</h2></a>
                     <div class="" style="font-size: 30px;">{{post.post_text}}</div>
                     <h6>Comments: {{this.comments.length}}</h6>
                 </div>
@@ -56,7 +56,7 @@
             </div>
             <div class="form-group mx-2">
                 <label for="exampleFormControlInput1">Post</label>
-                <input id="postcontent" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Comment">
+                <input id="postcontent" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Description">
             </div>
             <button id="submitbtn" type="button" class="btn btn-primary mx-auto w-25 mb-2">Submit!</button>
         </div>

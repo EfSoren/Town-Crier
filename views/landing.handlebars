@@ -19,7 +19,7 @@
             <div class="form-group mx-2">
                 <label for="exampleFormControlInput1">comment</label>
                 <input id="postcontent" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Comment Here!">
-            </div>
+        </div>
             <button id="submitbtn" type="button" class="btn btn-primary mx-auto w-25 mb-2">Submit!</button>
         </div>
     </section>
@@ -28,27 +28,27 @@
     <section class="container-fluid mb-5">
         <div class="row d-flex flex-column">
             <div class="d-flex mx-auto flex-column justify-content-around w-75">
-    
+
                 <div class="d-flex flex-row mx-auto p-2 border border-light w-75 rounded justify-content-between">
                     <h3 id="post-title" class="font-weight-bold mx-2 my-auto">{{postData.post_title}}</h3>
                     <div id="post-date" class="font-weight-bold mx-2 my-auto">{{postData.createdAt}}</div>
-                </div>
+            </div>
                 <div id="post-cont" class="mx-auto mt-2 p-2 border border-light w-75 rounded mb-2">
                     <div id="post-body" class="mx-2" style="font-size: 20px">{{postData.post_text}}</div>
-                </div>
+            </div>
                 <div class="d-flex flex-column w-75 mx-auto border border-light rounded">
                     {{#if comments.length }}
                     {{#each comments }}
                     <div class="my-2 mx-2">{{this.comment_text}}</div>
-                    {{/each}}
+                {{/each}}
                     {{else}}
                     <div class="rounded w-100 p-2 my-auto">
                         <div class="text-center" style="font-size: 20px;">There are no comments for this post just yet. Be the first!</div>
-                    </div>
+            </div>
                     {{/if}}
                 </div>
     
-            </div>
+        </div>
     </section>
 
 

@@ -10,7 +10,6 @@ const signupFormHandler = async (event) => {
   const location = document.querySelector("#city").value.trim();
 
   if (username && password) {
-
     const response = await fetch("/api/user/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -30,3 +29,30 @@ const signupFormHandler = async (event) => {
 document
   .querySelector("#signup-form")
   .addEventListener("submit", signupFormHandler);
+
+const guest = document.getElementById("forgot-password");
+
+const loginFormHandlerGuest = async (event) => {
+  event.preventDefault();
+
+  const username = "efsoren";
+  const password = "password";
+
+  if (username && password) {
+    const response = await fetch("/api/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, password }),
+    });
+
+    if (response.ok) {
+      const user = await response.json();
+      console.log(user);
+      document.location.replace(`city/${user.username}`);
+    } else {
+      alert("Failed to log in");
+    }
+  }
+};
+
+guest.addEventListener("click", loginFormHandlerGuest);

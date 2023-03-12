@@ -40,7 +40,8 @@ router.get("/city/:username", withAuth, async (req, res) => {
       ],
       exclude: User.password,
     });
-    const posts = cityData.map((post) => post.get({ plain: true }));
+    const newest = cityData.map((post) => post.get({ plain: true }));
+    const posts = newest.reverse();
     res.render("homepage", {
       posts,
       loggedIn: req.session.loggedIn,
